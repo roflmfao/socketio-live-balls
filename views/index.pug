@@ -1,42 +1,43 @@
 extends layout
 
 block content
-  .ui.one.column.stackable.center.aligned.page.grid.margin-30
-    .column.twelve.wide
-      .ui.stacked.segment.gameArea
-        .circle.blue(style='left:150px; top:100px')
-          .relative
-            span.name Berat
-            .message Selam
-        .circle.green(style='left:300px; top:100px')
-          .relative
-            span.name Emre
-            .message selam nasılsın :)
-        .circle.red(style='left:350px; top:300px')
-          .relative
-            span.name Joe
-            .message  This is awesome
-      .ui.items.chat
-        .item
-          .content
-            a.header.name Berat
-            .description.message
-              |  Selam
-        .item
-          .content
-            a.header.name Emre
-            .description.message
-              |  Selam nasılsın :)
-        .item
-          .content
-            a.header.name Joe
-            .description.message
-              |  This is awesome
-        .item
-          .content
-            a.header.name Veli
-            .description.message
-              |  Hey
-      .ui.action.input.fluid
-        input(type='text', placeholder='Type here...')
-        button.ui.button Send
+  div(ng-controller="indexController")
+    .ui.one.column.stackable.center.aligned.page.grid.margin-30
+      .column.twelve.wide
+        .ui.stacked.segment.gameArea
+          .circle.blue(style='left:150px; top:100px')
+            .relative
+              span.name Berat
+              .message Selam
+          .circle.green(style='left:300px; top:100px')
+            .relative
+              span.name Emre
+              .message selam nasılsın :)
+          .circle.red(style='left:350px; top:300px')
+            .relative
+              span.name Joe
+              .message  This is awesome
+        .ui.items.chat
+          .item
+            .content
+              a.header.name Berat
+              .description.message
+                |  Selam
+          .item
+            .content
+              a.header.name Emre
+              .description.message
+                |  Selam nasılsın :)
+          .item
+            .content
+              a.header.name Joe
+              .description.message
+                |  This is awesome
+          .item
+            .content
+              a.header.name Veli
+              .description.message
+                |  Hey
+        .ui.action.input.fluid
+          input(type='text', placeholder='Type here...')
+          button.ui.button Send
