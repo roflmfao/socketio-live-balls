@@ -12,32 +12,20 @@ block content
           .circle.green(style='left:300px; top:100px')
             .relative
               span.name Emre
-              .message selam nasılsın :)
+              .message Selam, nasılsın :)
           .circle.red(style='left:350px; top:300px')
             .relative
-              span.name Joe
+              span.name Arda
               .message  This is awesome
-        .ui.items.chat
-          .item
-            .content
-              a.header.name Berat
-              .description.message
-                |  Selam
-          .item
-            .content
-              a.header.name Emre
-              .description.message
-                |  Selam nasılsın :)
-          .item
-            .content
-              a.header.name Joe
-              .description.message
-                |  This is awesome
-          .item
-            .content
-              a.header.name Veli
-              .description.message
-                |  Hey
+        .ui.items.chat#chat-area
+          .item(ng-repeat="message in messages")
+            .content(ng-if="!message.type.code")
+              span [SERVER] &nbsp;
+              a.header.name {{ message.username }} &nbsp;
+              .description.message(ng-if="!message.type.message")
+                | ayrıldı.
+              .description.message(ng-if="message.type.message")
+                | katıldı.
         .ui.action.input.fluid
-          input(type='text', placeholder='Type here...')
+          input(type='text', placeholder='Buraya yazın..')
           button.ui.button Send

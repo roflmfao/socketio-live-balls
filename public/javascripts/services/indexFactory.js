@@ -1,6 +1,6 @@
 app.factory('indexFactory', [() => {
     const connectSocket = (url, options) => {
-        return new Promise ((resolve, reject) => {
+        return new Promise((resolve, reject) => {
             const socket = io.connect(url, options);
 
             socket.on('connect', () => {
@@ -12,6 +12,7 @@ app.factory('indexFactory', [() => {
             });
         });
     };
+
     return {
         connectSocket
     }
